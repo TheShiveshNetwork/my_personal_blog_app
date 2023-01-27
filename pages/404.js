@@ -2,12 +2,12 @@ import Link from 'next/link'
 
 export default function FourOhFour() {
     return <>
-        <div class="text-white w-full">
-            <div class="flex">
-                <div class="m-auto text-center">
+        <div className="text-white w-full">
+            <div className="flex">
+                <div className="m-auto text-center">
                     <div>
                         <svg width="631" height="379" viewBox="0 0 631 379" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0)">
+                            <g clipPath="url(#clip0)">
                                 <path
                                     d="M317.524 379C488.625 379 627.33 368.857 627.33 356.346C627.33 343.834 488.625 333.692 317.524 333.692C146.423 333.692 7.71875 343.834 7.71875 356.346C7.71875 368.857 146.423 379 317.524 379Z"
                                     fill="#F2F2F2" />
@@ -182,10 +182,10 @@ export default function FourOhFour() {
                         </svg>
 
                     </div>
-                    <p class="text-sm md:text-base text-indigo-600 p-2 mb-4">The stuff you were looking for doesn't exist
+                    <p className="text-sm md:text-base text-indigo-600 p-2 mb-4">The stuff you were looking for doesn't exist
                     </p>
                     <Link href="/"
-                        class="bg-transparent hover:bg-indigo-300 text-indigo-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-indigo-300 hover:border-transparent">
+                        className="bg-transparent hover:bg-indigo-300 text-indigo-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-indigo-300 hover:border-transparent">
                         Go to Home</Link>
                 </div>
             </div>

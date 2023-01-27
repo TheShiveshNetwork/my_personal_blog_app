@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Link from 'next/link'
 import { BiCategoryAlt, BiMoon, BiHome, BiSearch } from 'react-icons/bi'
+import { IoLogoElectron } from 'react-icons/io5'
 
 import { getCategories } from '../services'
 
@@ -20,8 +21,8 @@ const Header = () => {
             <div className="w-full px-10 border-black py-8 flex items-center justify-between lg:justify-center">
                 <div className="md:float-left block">
                     <Link href='/'>
-                        <span className='cursor-pointer font-bold text-4xl text-gray-800 transition duration-300 hover:text-indigo-600'>
-                            ShivuNet
+                        <span className='flex gap-3 items-center justify-center cursor-pointer font-bold text-4xl text-gray-800 transition duration-300 hover:text-indigo-600'>
+                            <IoLogoElectron />ShivuNet
                         </span>
                     </Link>
                 </div>
