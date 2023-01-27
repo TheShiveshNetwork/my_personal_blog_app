@@ -43,22 +43,22 @@ const PostDetail = ({ post }) => {
     };
 
     return (
-        <div className='bg-white shadow-lg rounded-lg lg:pb-8 pb-12 mb-8'>
-            <div className='relative overflow-hidden shadow-md mb-6'>
+        <div className='bg-white shadow-lg rounded-lg lg:pb-8 pb-6 mb-8'>
+            <div className='shadow-md mb-6 w-full'>
                 <img
                     src={post.featuredImage.url}
                     alt={post.title}
-                    className='object-top h-full rounded-t-lg'
+                    className='object-top w-full rounded-t-lg'
                 />
             </div>
-            <div className="block lg:flex xl:flex text-center items-center justify-center mb-8 w-full">
+            <div className="block lg:flex xl:flex gap-6 text-center items-center justify-center mb-6 w-full">
                 <div className="flex items-center justify-center mb-4 lg:m-0 w-full lg:w-auto mr-8">
                     <img
                         width='30px'
                         height='30px'
                         src={post.author.photo.url}
                         alt={post.author.name}
-                        className='align-middle rounded-full'
+                        className='align-middle items-center rounded-full'
                     />
                     <p className='inline align-middle text-gray-700 ml-2 text-lg'>{post.author.name}</p>
                 </div>
@@ -70,11 +70,11 @@ const PostDetail = ({ post }) => {
                 </div>
             </div>
 
-            <h1 className='mb-8 text-3xl font-semibold'>
+            <h1 className='mb-8 mx-6 mt-10 text-3xl font-semibold text-center'>
                 {post.title}
             </h1>
 
-            <div>
+            <div className='px-7'>
                 {post.content.raw.children.map((typeObj, index) => {
                     const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
 

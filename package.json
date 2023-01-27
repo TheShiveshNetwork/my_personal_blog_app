@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tanem/react-nprogress": "^5.0.25",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0",
     "html-react-parser": "^3.0.8",
@@ -13,6 +14,7 @@
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "react-multi-carousel": "^2.8.2",
     "sass": "^1.57.1"
   },
