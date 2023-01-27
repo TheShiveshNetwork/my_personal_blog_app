@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import Link from 'next/link'
-import { BiCategoryAlt } from 'react-icons/bi'
+import { BiCategoryAlt, BiMoon } from 'react-icons/bi'
 
 import { getCategories } from '../services'
 
@@ -28,8 +28,11 @@ const Header = () => {
 
                 <div className="flex md:float-left md:contents">
 
-                    <div className='w-full h-full '>
-                        <span className='md:float-right align-middle text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-3xl cursor-pointer' onClick={() => setCategoriesToggle(!categoriesToggle && true)}>
+                    <div className='w-full h-full md:float-right flex gap-4 justify-end'>
+                        <span className='text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-3xl cursor-pointer'>
+                            <BiMoon />
+                        </span>
+                        <span className='text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-3xl cursor-pointer' onClick={() => setCategoriesToggle(!categoriesToggle && true)}>
                             <BiCategoryAlt />
                         </span>
                         {categoriesToggle &&
