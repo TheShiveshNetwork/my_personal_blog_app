@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { getPosts } from '../services'
 
 import { PostCard, Categories, PostWidget } from '../components'
+import { FeaturedPosts } from '../sections'
 
 const Home: NextPage = ({ posts }) => {
   return (
@@ -14,11 +15,15 @@ const Home: NextPage = ({ posts }) => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       </Head>
 
+      <h1 className='mb-4 text-3xl font-semibold ml-5'>Feeds</h1>
+      <FeaturedPosts />
+
+        <h1 className='mb-4 text-3xl font-semibold ml-2 pt-8'>Posts</h1>
       <div className='grid grid-cols-1 lg:grid-cols-12 gap-12'>
         <div className='lg:col-span-8 col-span-1'>
-          {posts?
-          posts.reverse().map((post) => <PostCard post={post.node} key={post.title} /> )
-        : ('No Posts Found')}
+          {posts ?
+            posts.reverse().map((post) => <PostCard post={post.node} key={post.title} />)
+            : ('No Posts Found')}
         </div>
 
         <div className="lg:col-span-4 col-span-1">
@@ -37,7 +42,7 @@ export async function getStaticProps() {
   const posts = (await getPosts()) || [];
 
   return {
-    props: {posts}
+    props: { posts }
   }
 }
 
