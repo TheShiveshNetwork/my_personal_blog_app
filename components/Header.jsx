@@ -10,6 +10,7 @@ import { getCategories } from '../services'
 const Header = () => {
     const [categories, setCategories] = useState([])
     const [categoriesToggle, setCategoriesToggle] = useState(false)
+    const [searchQuery, setSearchQuery] = useState('')
 
     useEffect(() => {
         getCategories()
@@ -30,17 +31,34 @@ const Header = () => {
                 <div className="flex md:float-left md:contents">
 
                     <div className='w-full h-full md:float-right flex gap-4 justify-end'>
-                        <span className='text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-3xl cursor-pointer'>
-                            <BiSearch />
-                        </span>
+                        <div className='h-full hidden lg:flex xl:flex md:flex'>
+                            <input
+                                type='text'
+                                className='bg-gray-100 rounded-l-full py-1 px-4 focus:outline-blue-500 shadow-sm h-[35px]'
+                                placeholder='Search'
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            <Link href={`/posts/search/${searchQuery}`}>
+                                <BiSearch className='text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-3xl cursor-pointer h-[35px] w-[40px] p-2 pr-3 bg-blue-500 rounded-r-3xl shadow-lg' />
+                            </Link>
+                        </div>
+
                         <span className='text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-3xl cursor-pointer' onClick={() => setCategoriesToggle(!categoriesToggle && true)}>
                             <BiCategoryAlt />
                         </span>
                         {categoriesToggle &&
                             <div className='absolute w-[200px] right-10 top-20 flex flex-col bg-white px-4 py-2 pb-3 z-50 shadow-lg rounded-lg'>
-                                <span className='mt-2 text-gray-900 font-semibold pb-2 mb-2 w-full text-center border-b'>
-                                    Controls
-                                </span>
+                                <div className='flex w-full my-3 lg:hidden xl:hidden md:hidden'>
+                                    <input
+                                        type='text'
+                                        className='bg-gray-100 rounded-l-full w-full px-4 focus:outline-blue-500 shadow-sm'
+                                        placeholder='Search'
+                                    />
+                                    <Link href={`/posts/search/${searchQuery}`}>
+                                        <BiSearch className='text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-3xl cursor-pointer h-[35px] w-[40px] p-2 pr-3 bg-blue-500 rounded-r-3xl shadow-lg' />
+                                    </Link>
+                                </div>
                                 <div className='flex gap-5 text-gray-900 font-semibold pb-5 mt-3 mb-3 w-full text-center border-b items-center justify-center'>
                                     <Link href='/' onClick={() => setCategoriesToggle(false)} className='flex text-gray-800 transition duration-300 hover:text-gray-600 font-semibold text-xl cursor-pointer items-center justify-center'>
                                         <BiHome />
